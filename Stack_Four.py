@@ -103,10 +103,21 @@ df["gamma_lower"] = df["gamma_mean"] - 1.96 * df["gamma_sd"]
 df["gamma_upper"] = df["gamma_mean"] + 1.96 * df["gamma_sd"]
 
 # Computer the posterior using the assumption of a Gaussian variational posterior
-
 df["p_gamma_gt_0"] = 1 - norm.cdf(0, loc=df["gamma_mean"], scale=df["gamma_sd"])
 
+annot = pd.read_csv("CpG_annotations.csv")  # must contain CpG, chr, pos
+df2 = df.merge(annot, on="CpG") # note renamed CGid to CpG
+
+# Sort by chromosome and position
+df2["seqnames"] = df2["seqnames"].astype(str)
+df2 = df2.sort_values(["seqnames", "probeStart"])
+
+# Create cumulative genomic position
+df2["posi_cumu"] = df2.groupby("seqnames")["probeStart"].transform(
+    lambda x: x + x.min()
+)
+
 # save the final effect
-df.to_csv("EWAS_ADVI_effect_sizes.csv", index=False)
+df2.to_csv("EWAS_ADVI_effect_sizes.csv", index=False)
 
 print("Finished generating EWAS effect sizes without rerunning the model.")
