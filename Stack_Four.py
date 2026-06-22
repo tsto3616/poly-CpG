@@ -2,10 +2,6 @@ import numpy as np
 import pandas as pd
 import pymc as pm
 from scipy.stats import norm
-import matplotlib.pyplot as plt
-from statsmodels.formula.api import ols
-import statsmodels.api as sm
-import seaborn as sns
 
 # load the data
 df = pd.read_csv("CSL_with_Bayesian_residuals.csv")
