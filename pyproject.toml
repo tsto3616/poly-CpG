@@ -23,3 +23,6 @@ Issues = "https://github.com/tsto3616/poly-CpG/issues"
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+poly_cpg = ["data/*.csv"]
