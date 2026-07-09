@@ -1,6 +1,6 @@
 [project]
 name = "poly-cpg"
-version = "1.0.0"
+version = "1.0.2"
 description = "A self-tuning sliding-window framework for phenotype-linked regional poly-methylation architecture in sparse wildlife methylomes."
 authors = [
     { name = "Thomas Stocker", email = "Thomas.stocker@sydney.edu.au" }
