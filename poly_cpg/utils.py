@@ -22,3 +22,4 @@ def load_example():
     cpg_names = df_meth.columns.tolist()
 
     return M, pos, gamma, beta, y, cpg_names
+
