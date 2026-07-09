@@ -29,3 +29,4 @@ print(df_windows.head())
 
 This produces a table of windows with the genomic coordinates, number of CpGs, R^2 values, directional agreement and trust classificaiton 
 
+The script folder contains the necessary script for the synthetic data generation. 
