@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use the poly-CpG sliding-window framework or code, please cite the following paper and software package."
+title: "poly-CpG: A self-tuning sliding-window framework for phenotype-linked regional poly-methylation architecture in sparse wildlife methylomes"
+version: "1.0.0"
+
+# EcoEvoRxiv DOI
+doi: "https://doi.org/10.32942/X2QX1T"
+
+date-released: "2026-07-10"
+
+authors:
+  - family-names: "Stocker"
+    given-names: "Thomas"
+    orcid: "https://orcid.org/0009-0006-3567-3338"
+    affiliation: "Sydney School of Veterinary Science, University of Sydney, NSW, Australia"
+
+repository-code: "https://github.com/tsto3616/poly-CpG"
+license: "MIT"
+
+keywords:
+  - methylation
+  - epigenomics
+  - wildlife genomics
+  - sliding window
+  - poly-CpG
+  - Bayesian modelling
+  - pinniped physiology
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Stocker"
+      given-names: "Thomas"
+      orcid: "https://orcid.org/0009-0006-3567-3338"
+  title: "A self-tuning sliding window method for detecting phenotype-linked regional poly-methylation architecture in sparse wildlife methylomes"
+  journal: "XXX"
+  year: 2026
+  volume: "XX"
+  number: "XX"
+  pages: "XX–XX"
+
+  # fill in once accepted
+  doi: "10.XXXX/XXXX"
