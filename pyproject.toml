@@ -1,0 +1,25 @@
+[project]
+name = "poly-cpg"
+version = "1.0.0"
+description = "A self-tuning sliding-window framework for phenotype-linked regional poly-methylation architecture in sparse wildlife methylomes."
+authors = [
+    { name = "Thomas Stocker", email = "Thomas.stocker@sydney.edu.au" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "scipy>=1.10"
+]
+
+[project.urls]
+Homepage = "https://github.com/tsto3616/poly-CpG"
+Repository = "https://github.com/tsto3616/poly-CpG"
+Issues = "https://github.com/tsto3616/poly-CpG/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
