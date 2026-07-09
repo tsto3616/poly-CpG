@@ -1,10 +1,32 @@
-# poly-CpG
-The repository encodes the sliding window pipeline, accompanying statistics and data for a study on the California Sea Lion's epigenome
+# poly-CpG: Sliding window analysis of methylomes
+This is a lightweight package to accompany the sliding window method for the analysis of methylomes. 
 
-The repository is split into roughly eight stacks of python code to summarise the entire workflow of the study. A detailed explanation can be found in the Supplementary Methods (in this GitHub's files) or the publication. All data can be found in the repository too. 
+## Additional scripts and data can be found in the "Supplementary" branch. Herein the data and code used within the study are provided.
 
-The first stack's code can be found under "Stack_One.py". The second stack = "Stack_Two.py" and so on. Greater detail is provided in each Stack's python file. 
+The package call be installed as:
 
-The supplementary files for the CpG annotations can be found under the GitHub repository for the original methylation study by different Authors/ Labs (https://github.com/shorvath/MammalianMethylationConsortium). The GEO datasets used to construct the M-score matrix can be found through the GEO accession number: GSE227319. The gff3 file used to provide genomic coordinates for the annotation of the CpGs onto genes was sourced from the NCBI Genome Browser server for the genome of California Sea Lions (GCA_009762295.2). 
+```
+pip install poly_cpg
+```
 
-The only data provided was the end result of stack six for people to try the results from Stack Seven. While access is freely available please cite the study. 
+The program can quickly be performed using the commands: 
+
+```
+from poly_cpg.utils import load_example
+from poly_cpg.sliding_window import self_tuning_windows_dual, classify_windows
+
+# Load synthetic example data
+M, pos, gamma, beta, y, cpg_names = load_example()
+
+# Run sliding-window algorithm
+df_windows = self_tuning_windows_dual(M, gamma, beta, pos, y)
+
+# Classify windows
+df_windows = classify_windows(df_windows)
+
+print(df_windows.head())
+
+```
+
+This produces a table of windows with the genomic coordinates, number of CpGs, R^2 values, directional agreement and trust classificaiton 
+
