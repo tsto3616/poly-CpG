@@ -12,17 +12,16 @@ pip install poly_cpg
 The program can quickly be performed using the commands: 
 
 ```
-from poly_cpg.utils import load_example
-from poly_cpg.sliding_window import self_tuning_windows_dual, classify_windows
+import poly_cpg as pc
 
 # Load synthetic example data
-M, pos, gamma, beta, y, cpg_names = load_example()
+M, pos, gamma, beta, y, cpg_names = pc.load_example()
 
 # Run sliding-window algorithm
-df_windows = self_tuning_windows_dual(M, gamma, beta, pos, y)
+df_windows = pc.self_tuning_windows_dual(M, gamma, beta, pos, y)
 
 # Classify windows
-df_windows = classify_windows(df_windows)
+df_windows = pc.classify_windows(df_windows)
 
 print(df_windows.head())
 
